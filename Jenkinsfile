@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             agent{
@@ -26,6 +25,7 @@ pipeline {
                     image 'node:18-alpine'
                     reuseNode true
                 }
+             }  
             steps {
                 sh '''
                     echo "Test Stage"
