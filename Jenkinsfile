@@ -55,9 +55,7 @@ pipeline {
                                      reuseNode true
                                   }
                                 }  
-                                environment {
-                                  CI_ENVIRONMENT_URL='https://benevolent-phoenix-51eff3.netlify.app'
-                                }
+                               
                                 steps {
                                        sh '''
                                        npm install  serve
@@ -102,6 +100,9 @@ pipeline {
                           reuseNode true
                       }
                     }  
+                    environment {
+                                  CI_ENVIRONMENT_URL='https://benevolent-phoenix-51eff3.netlify.app'
+                                }
                     steps {
                             sh '''
                             
