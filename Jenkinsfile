@@ -8,7 +8,7 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+      /*  stage('Build') {
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -74,7 +74,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
 
          stage('Deploy Staging') {
             agent {
@@ -89,7 +89,7 @@ pipeline {
                     node_modules/.bin/netlify --version
                     echo "Deploying to Staging. Site ID: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
-                    node_modules/.bin/netlify deploy --dir=build
+                    node_modules/.bin/netlify deploy --dir=build --json > deploy-output.json
                 '''
             }
         }
